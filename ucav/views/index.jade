@@ -1,0 +1,31 @@
+link(rel='stylesheet', href='css/bootstrap.min.css')
+link(rel='stylesheet', href='css/bootstrap-switch.min.css')
+link(rel='stylesheet', href='css/jquery-ui.css')
+link(rel='stylesheet', href='css/login.css')
+script(src='js/jquery.js')
+script(src='js/jquery-ui.js')
+script(src='js/login.js')
+#login.login
+  h1 平台登陆
+  form#loginform(name='loginform', action='login_auth', method='post')
+    p
+      label(for='user_login')
+        | 用户名
+        br
+        input#user_login.input(type='text', name='log', value='', size='20')
+    p
+      label(for='user_pass')
+        | 密码
+        br
+        input#user_pass.input(type='password', name='pwd', value='', size='20')
+    p.forgetmenot
+      label(for='rememberme')
+        input#rememberme(name='rememberme', type='checkbox', value='forever')
+        | 记住我的登录信息
+    p.submit
+      input#login-submit.btn.btn-lg.btn-primary.btn-shadow.bs3-link(type='submit', name='login-submit', value='登录')
+      input(type='hidden', name='redirect-to', value='redirect')
+      input(type='hidden', name='testcookie', value='1')
+  p#nav
+    a(href='localhost:3000/login.html', title='找回密码') 忘记密码？
+#dialog(title='登陆确认')
